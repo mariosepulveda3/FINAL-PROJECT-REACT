@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import Movie from "../components/Movie";
 
 const Search = () => {
   const [movies, setMovies] = useState([]);
@@ -24,23 +25,7 @@ const Search = () => {
         placeholder="Busqueda de películas"
       />
       {movies.length > 0 &&
-        movies.map((movie) => {
-          if (movie.title.toLowerCase().includes(search)) {
-            return (
-              <div key={JSON.stringify(movie)} className="movie">
-                <p>{movie.title}</p>
-                <img
-                  src={movie.img}
-                  alt={movie.title}
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-            );
-          } else {
-            return null;
-          }
-        }
-        )}
+        movies.map((movie) => <Movie key={JSON.stringify(movie)} movie={movie} search={search}/>)}
     </div>
   );
 };
