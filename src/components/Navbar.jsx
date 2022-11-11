@@ -7,6 +7,9 @@ const Navbar = () => {
       <NavLink to="" activeclassname={"active"}>
         Home
       </NavLink>
+      <NavLink to="search" activeclassname={"active"}>
+        Search
+      </NavLink>
       <NavLink to="login" activeclassname={"active"}>
         Login
       </NavLink>
