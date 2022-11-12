@@ -1,7 +1,92 @@
 .App {
-  .search {
+  background-image: url("https://www.transparenttextures.com/patterns/shattered.png");
+
+  .navbar {
+    display: flex;
+    justify-content: space-evenly;
+    padding-block: 50px;
+    background: rgba(157, 157, 157, 0.463);
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  }
+
+  .movie {
+    display: grid;
+    max-width: 80%;
+    margin: 0 auto;
+    margin-top: 10px;
+
+    .container {
+      color: whitesmoke;
+      background-color: rgba(2, 1, 1, 0.671);
+      margin: 10px;
+      text-align: center;
+      width: 220px;
+      &:hover {
+        transform: scale(1.01);
+      }
+    }
+
     img {
-      width: 200px;
+      width: 100%;
+    }
+  }
+
+  .search {
+
+    text-align: center;
+    
+    input {
+      text-align: center;
+      margin-top: 50px;
+      padding: 5px 50px;
+    }
+  }
+
+  .register {
+    text-align: center;
+
+    h1 {
+      // background: brown;
+    }
+
+    form {
+      // align-items: center;
+      display: flex;
+      flex-direction: column;
+      background: rgba(237, 241, 244, 0.604);
+      padding: 50px;
+      margin-inline: 25%;
+      border: solid rgba(0, 0, 0, 0.215);
+    }
+
+    label {
+      font-style: italic;
+      margin-block: 10px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    input {
+      width: 100%;
+      background: transparent;
+      outline: none;
+      border: 0;
+      border-bottom: 1px solid rgb(255, 255, 255);
+    }
+
+    button {
+      width:25%;
+      text-align: center;
+      padding: 10px 20px;
+      margin-top: 15px;
+      background: rgba(0, 0, 0, 0.676);
+      color: whitesmoke;
+      border: 0 white;
+      cursor: pointer;
     }
   }
 }

@@ -1,14 +1,26 @@
+import axios from "axios";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Movie from "../components/Movie";
-import { getMovies } from "../redux/movies/movies.functions";
 
 const Search = () => {
   const dispatch = useDispatch()
   const {movies, isLoading, search, error} = useSelector(state => state.movies)
 
   useEffect(() => {
-    getMovies(dispatch);
+    const getMovies = async () => {
+      try {
+
+        dispatch({type: 'gettingMovies'});
+        const res = await axios.get("http://localhost:3000/movies");
+  
+        dispatch({type: 'getMovies', payload: res.data});
+        
+      } catch (error) {
+        dispatch({type: 'errorMovies', payload: error.message})
+      }
+    };
+    getMovies();
   }, []);
 
   return (
