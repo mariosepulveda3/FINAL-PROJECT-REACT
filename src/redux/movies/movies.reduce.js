@@ -1,5 +1,3 @@
-import Search from "../../pages/Search";
-
 const INITIAL_STATE = {
     movies: [],
     isLoading: false,
@@ -22,7 +20,6 @@ const moviesReducer = (state = INITIAL_STATE, action) => {
             return {...state, isLoading: false, movies: [], error: action.payload};
 
         default:
-            console.log("The command does not exist");
             return state;
     }
 }
