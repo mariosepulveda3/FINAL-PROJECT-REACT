@@ -1,23 +1,23 @@
 .App {
+  background-color: rgb(189, 68, 68);
   background-image: url("https://www.transparenttextures.com/patterns/shattered.png");
 
   .navbar {
     display: flex;
     justify-content: space-evenly;
     padding-block: 50px;
-    background: rgba(157, 157, 157, 0.463);
+    background: rgba(0, 0, 0, 0.707);
 
     a {
+      font-weight:  bolder;
       text-decoration: none;
-      color: black;
+      color: rgb(255, 255, 255);
     }
   }
 
   .movie {
-    display: grid;
-    max-width: 80%;
-    margin: 0 auto;
-    margin-top: 10px;
+    display: flex;
+    cursor: pointer;
 
     .container {
       color: whitesmoke;
@@ -31,7 +31,8 @@
     }
 
     img {
-      width: 100%;
+      margin: 5px;
+      width: 90%;
     }
   }
 
@@ -46,15 +47,16 @@
     }
   }
 
-  .register {
+  .register, .login  {
     text-align: center;
 
     h1 {
-      // background: brown;
+      color: whitesmoke;
+      font-size: 25px;
     }
 
     form {
-      // align-items: center;
+      align-items: center;
       display: flex;
       flex-direction: column;
       background: rgba(237, 241, 244, 0.604);
@@ -64,14 +66,14 @@
     }
 
     label {
-      font-style: italic;
-      margin-block: 10px;
       display: flex;
       flex-direction: column;
+      font-style: italic;
+      margin-block: 10px;
     }
 
     input {
-      width: 100%;
+      text-align: center;
       background: transparent;
       outline: none;
       border: 0;
@@ -80,9 +82,8 @@
 
     button {
       width:25%;
-      text-align: center;
       padding: 10px 20px;
-      margin-top: 15px;
+      margin-top: 20px;
       background: rgba(0, 0, 0, 0.676);
       color: whitesmoke;
       border: 0 white;

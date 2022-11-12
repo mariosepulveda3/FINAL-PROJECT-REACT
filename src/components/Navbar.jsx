@@ -11,7 +11,7 @@ const Navbar = () => {
         Search
       </NavLink>
       <NavLink to="login" activeclassname={"active"}>
-        Login
+        Log In
       </NavLink>
       <NavLink to="register" activeclassname={"active"}>
         Register
