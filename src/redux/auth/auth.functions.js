@@ -1,14 +1,24 @@
 import { API } from "../../shared/services/api";
 
-
 export const newUser = async (formdata, navigate, dispatch) => {
-    dispatch({type: 'register_user_start' });
-    try {
-        const res = await API.post('/users/postNewUser', formdata);
-        dispatch({type: 'register_user_ok'});
-        console.log(res);
-        navigate('/login')
-    } catch (error) {
-        dispatch({type: 'register_user_error'})
-    }
-} 
+  dispatch({ type: "register_user_start" });
+  try {
+    await API.post("/users/postNewUser", formdata);
+    dispatch({ type: "register_user_ok" });
+    navigate("/login");
+  } catch (error) {
+    dispatch({ type: "register_user_error", payload: error.message });
+  }
+};
+
+export const loginUser = async (formdata, navigate, dispatch) => {
+  dispatch({ type: "login_user_start" });
+  try {
+    const res = await API.post("/users/login", formdata);
+    dispatch({ type: "login_user_ok", payload: res.data });
+    localStorage.setItem("token", res.data.token);
+    navigate("");
+  } catch (error) {
+    dispatch({ type: "login_user_error", payload: error.message });
+  }
+};
