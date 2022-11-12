@@ -19,6 +19,6 @@ export const loginUser = async (formdata, navigate, dispatch) => {
     localStorage.setItem("token", res.data.token);
     navigate("/");
   } catch (error) {
-    dispatch({ type: "login_user_error", payload: error.message });
+    dispatch({ type: "login_user_error", payload: error.response.data });
   }
 };

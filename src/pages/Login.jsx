@@ -12,15 +12,16 @@ const Login = () => {
     formState: { errors, isValid },
   } = useForm();
   const navigate = useNavigate();
-  const{user,token} =useSelector(state => state.auth)
+  const { error, isLoading } = useSelector((state) => state.auth);
   const login = (formdata) => {
-   loginUser(formdata, navigate, dispatch)
-  
+    loginUser(formdata, navigate, dispatch);
   };
- 
+
   return (
     <div className="login">
       <h1>Log In</h1>
+      {error && <h2>{error}</h2>}
+      {isLoading && <h2>Checking User</h2>}
       <form onSubmit={handleSubmit(login)}>
         <label>
           Email
@@ -31,7 +32,7 @@ const Login = () => {
               required: "Introduce an email",
               pattern: {
                 value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                message: "The email does not exist"
+                message: "The email does not exist",
               },
             })}
           />
