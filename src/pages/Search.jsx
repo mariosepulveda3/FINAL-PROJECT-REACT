@@ -1,16 +1,18 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Movie from "../components/Movie";
 
 const Search = () => {
-  const [movies, setMovies] = useState([]);
-  const [search, setSearch] = useState("");
+  const dispatch = useDispatch()
+  const {movies, isLoading, search, error} = useSelector(state => state.movies)
 
   useEffect(() => {
     const getMovies = async () => {
+      dispatch({type: 'gettingMovies'});
       const res = await axios.get("http://localhost:3000/movies");
 
-      setMovies(res.data);
+      dispatch({type: 'getMovies', payload: res.data});
     };
     getMovies();
   }, []);
@@ -21,7 +23,7 @@ const Search = () => {
     <div className="search">
       <input
         type="text"
-        onKeyUp={(e) => setSearch(e.target.value.toLowerCase())}
+        onKeyUp={(e) => dispatch({type: 'getMovies', payload: e.target.value.toLowerCase() })}
         placeholder="Busqueda de películas"
       />
       {movies.length > 0 &&
