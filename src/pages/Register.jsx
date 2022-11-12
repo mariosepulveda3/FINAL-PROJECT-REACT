@@ -1,13 +1,17 @@
 import React from 'react'
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom';
+import { newUser } from '../redux/auth/auth.functions';
 
 const Register = () => {
-  const { register, handleSubmit, formState: {errors, isValid} } = useForm();
+  const { register, handleSubmit, formState: {errors} } = useForm();
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const registerUser = (formdata) => {
     console.log(formdata);
+    newUser(formdata, navigate, dispatch)
   }
 
   return (
