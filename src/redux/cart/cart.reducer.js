@@ -11,6 +11,7 @@ const cartReducer = (state = INITIAL_STATE, action) => {
             return state;
 
         case "removeAll":
+            state.map(movie => movie.inCart = false)
             return INITIAL_STATE
         
         default:

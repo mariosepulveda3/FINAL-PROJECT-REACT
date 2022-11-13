@@ -15,10 +15,10 @@ const Navbar = () => {
         <>
           <NavBarLink route="addMovie" name="AddMovie" />
           <NavBarLink route="cart" name="Cart" />
+          <LogOutButton /> 
         </>
       )
       }
-      <LogOutButton />
 
     </nav>
   );
