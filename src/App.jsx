@@ -20,7 +20,7 @@ function App() {
   useEffect (() => {
     token && checkSession(token, navigate, dispatch)
   }, []);
-  
+
   return (
     <div className="App">
       <Navbar />
