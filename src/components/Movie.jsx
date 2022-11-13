@@ -24,6 +24,7 @@ const Movie = ({ movie }) => {
               movie.inCart = false
               navigate("")
             }} text="Remove from cart" size="s" borderRadius="4px"/>}
+          <GenericButton text={<Link to={`/search/${movie.title}`}>See more</Link>} size="s" borderRadius="4px" />
         </div>
       }
     </div>

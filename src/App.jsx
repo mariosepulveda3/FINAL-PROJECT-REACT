@@ -11,6 +11,7 @@ import { useEffect } from "react";
 import { checkSession } from "./redux/auth/auth.functions";
 import { useDispatch } from "react-redux";
 import Cart from "./pages/Cart";
+import MovieInfo from "./pages/MovieInfo";
 
 function App() {
 
@@ -28,7 +29,10 @@ function App() {
       <main>
       <Routes>
         <Route path="" element={<Home />} />
-        <Route path='/search' element={<Search/>}/>
+        <Route path='/search'>
+          <Route index element={<Search />} />
+          <Route path=":title" element={<MovieInfo />} />
+        </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/addMovie" element={<AuthRoute component={<AddMovie/>} />} />
