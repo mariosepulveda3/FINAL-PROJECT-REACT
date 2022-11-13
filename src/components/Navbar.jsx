@@ -1,27 +1,18 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
+import NavBarLink from "./NavBarLink";
 
 const Navbar = () => {
   const {token} = useSelector(state => state.auth);
   return (
     <nav className="navbar">
-      <NavLink to="" activeclassname={"active"}>
-        Home
-      </NavLink>
-      <NavLink to="search" activeclassname={"active"}>
-        Search
-      </NavLink>
-      <NavLink to="login" activeclassname={"active"}>
-        Log In
-      </NavLink>
-      <NavLink to="register" activeclassname={"active"}>
-        Register
-      </NavLink>
+      <NavBarLink route="" name="Home" />
+      <NavBarLink route="search" name="Search" />
+      <NavBarLink route="login" name="Login" />
+      <NavBarLink route="register" name="Register" />
       {token &&
-      <NavLink to="addMovie" activeclassname={"active"}>
-        Add movie
-      </NavLink>
+        <NavBarLink route="addMovie" name="AddMovie" />
       }
 
     </nav>
