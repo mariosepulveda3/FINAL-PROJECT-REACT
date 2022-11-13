@@ -13,32 +13,31 @@ import Cart from "./pages/Cart";
 import MovieInfo from "./pages/MovieInfo";
 
 function App() {
+	const token = localStorage.getItem("token");
+	const navigate = useNavigate();
+	const dispatch = useDispatch();
 
-  const token = localStorage.getItem('token');
-  const navigate = useNavigate();
-  const dispatch = useDispatch(); 
+	useEffect(() => {
+		token && checkSession(token, navigate, dispatch);
+	}, []);
 
-  useEffect (() => {
-    token && checkSession(token, navigate, dispatch)
-  }, []);
-
-  return (
-    <div className="App">
-      <Navbar />
-      <main>
-      <Routes>
-        <Route path=''>
-          <Route index element={<Home />} />
-          <Route path=":title" element={<MovieInfo />} />
-        </Route>
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/addMovie" element={<AuthRoute component={<AddMovie/>} />} />
-        <Route path="/cart" element={<AuthRoute component={<Cart />} />} />
-      </Routes>
-      </main>
-    </div>
-  );
+	return (
+		<div className="App">
+			<Navbar />
+			<main>
+				<Routes>
+					<Route path="">
+						<Route index element={<Home />} />
+						<Route path=":title" element={<MovieInfo />} />
+					</Route>
+					<Route path="/login" element={<Login />} />
+					<Route path="/register" element={<Register />} />
+					<Route path="/addMovie" element={<AuthRoute component={<AddMovie />} />} />
+					<Route path="/cart" element={<AuthRoute component={<Cart />} />} />
+				</Routes>
+			</main>
+		</div>
+	);
 }
 
 export default App;

@@ -5,22 +5,22 @@ import { logOutUser } from "../redux/auth/auth.functions";
 import GenericButton from "./GenericButton";
 
 const LogOutButton = () => {
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const logOut = () => {
-    logOutUser(navigate, dispatch);
-  };
-  return (
-    <GenericButton
-      func={logOut}
-      text="Log Out"
-      bgColor="whitesmoke"
-      textColor="black"
-      borderRadius="10px"
-      size="s"
-      fontSize="18px"
-    />
-  );
+	const navigate = useNavigate();
+	const dispatch = useDispatch();
+	const logOut = () => {
+		logOutUser(navigate, dispatch);
+	};
+	return (
+		<GenericButton
+			func={logOut}
+			text="Log Out"
+			bgColor="whitesmoke"
+			textColor="black"
+			borderRadius="10px"
+			size="s"
+			fontSize="18px"
+		/>
+	);
 };
 
 export default LogOutButton;

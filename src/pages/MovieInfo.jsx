@@ -15,7 +15,7 @@ const MovieInfo = () => {
 		<div>
 			<p>{movie.title}</p>
 			<img src={movie.img} alt={movie.title} style={{ width: "300px" }} />
-			<AddRemoveButton movie={movie}/>
+			<AddRemoveButton movie={movie} />
 		</div>
 	);
 };
