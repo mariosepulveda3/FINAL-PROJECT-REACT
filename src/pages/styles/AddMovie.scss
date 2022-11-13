@@ -1,0 +1,59 @@
+.addMovie {
+
+    background-image: url("https://images.ecestaticos.com/leU_vr7vwdksdq_fkLknTvqTmlw=/0x90:1696x1041/1600x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F4eb%2Fa77%2F5f9%2F4eba775f9bbe9f2f8c602b8731e81a46.jpg");
+
+
+  h1 {
+    text-align: center;
+    padding-block: 50px;
+    font-size: 25px;
+
+    @media screen and (max-width: 500px) {
+      padding-block: 20px;
+      font-size: 18px;
+    }
+  }
+
+  form {
+    padding-left: 50px;
+    background: rgba(205, 205, 205, 0.814);
+    padding-block: 20px;
+    margin-inline: 10%;
+    border: solid rgba(0, 0, 0, 0.215);
+
+    @media screen and (max-width: 500px) {
+      margin-inline: 75px;
+      padding: 10px;
+    }
+  }
+
+  label {
+    display: flex;
+    align-content: flex-start;
+
+    //   display: flex;
+    //   text-align: start;
+    //   flex-direction: column;
+    margin-block: 10px;
+  }
+
+  input {
+    text-align: center;
+    background: transparent;
+    margin-left: 30px;
+    outline: none;
+    border: 0;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    font-family: "Roboto Mono", monospace;
+  }
+
+  button {
+    // width:25%;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background: rgba(0, 0, 0, 0.676);
+    color: whitesmoke;
+    border-color: whitesmoke;
+    cursor: pointer;
+  }
+}

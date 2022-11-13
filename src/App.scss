@@ -1,10 +1,8 @@
 .App {
-  // background-color: rgb(189, 68, 68);
   background-image: url("https://fondosmil.com/fondo/57480.jpg");
   @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
   font-family: "Roboto Mono", monospace;
-  // background-image: url('https://images.ecestaticos.com/leU_vr7vwdksdq_fkLknTvqTmlw=/0x90:1696x1041/1600x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F4eb%2Fa77%2F5f9%2F4eba775f9bbe9f2f8c602b8731e81a46.jpg');
-
+  
   .navbar {
     display: flex;
     justify-content: space-evenly;
@@ -28,6 +26,22 @@
     }
   }
 
+  .home {
+    text-align: center;
+    padding: 100px;
+    background: rgba(255, 255, 255, 0.716);
+
+    h1 {
+      font-size: 50px;
+      margin-bottom: 50px;
+    }
+
+    img {
+      padding: 50px;
+      width: 70%;
+    }
+  }
+
   .movie {
     display: grid;
     cursor: pointer;
@@ -38,7 +52,7 @@
       padding: 10px;
       margin: 10px;
       width: 220px;
-      border: solid 1px rgba(255, 0, 0, 0.233);
+      border: solid 1px rgba(0, 0, 0, 0.233);
       &:hover {
         transform: scale(1.01);
       }

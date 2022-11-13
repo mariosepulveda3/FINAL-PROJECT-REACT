@@ -1,3 +1,4 @@
+import { NavigationType } from "react-router-dom";
 import { API } from "../../shared/services/api";
 
 export const newUser = async (formdata, navigate, dispatch) => {
@@ -20,5 +21,22 @@ export const loginUser = async (formdata, navigate, dispatch) => {
     navigate("/");
   } catch (error) {
     dispatch({ type: "login_user_error", payload: error.response.data });
+  }
+};
+
+export const checkSession = async (token, navigate, dispatch) => {
+  dispatch({ type: "checkSession_start" });
+  try {
+    const res = await API.post("users/checkSession");
+    console.log(res);
+    dispatch({
+      type: "checkSession_ok",
+      payload: { user: res.data, token: token },
+    });
+    navigate("/");
+  } catch (error) {
+    dispatch({ type: "checkSession_error", payload: error.response.data });
+    localStorage.removeItem('token');
+    navigate('/login');
   }
 };
