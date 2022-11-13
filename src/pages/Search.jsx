@@ -28,9 +28,9 @@ const Search = () => {
       <input
         type="text"
         onKeyUp={(e) => dispatch({type: 'searchMovies', payload: e.target.value.toLowerCase()})}
-        placeholder="Busqueda de películas"
+        placeholder="Search movie"
       />
-      {isLoading && (<h2>Cargando películas</h2>)}
+      {isLoading && (<h2>Loading movies...</h2>)}
       {error && (<h2>{error}</h2>)}
       {movies.length > 0 &&
         movies.map((movie) => <Movie key={JSON.stringify(movie)} movie={movie} search={search}/>)}
