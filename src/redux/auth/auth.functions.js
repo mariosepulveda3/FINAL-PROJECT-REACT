@@ -28,7 +28,6 @@ export const checkSession = async (token, navigate, dispatch) => {
   dispatch({ type: "checkSession_start" });
   try {
     const res = await API.post("users/checkSession");
-    console.log(res);
     dispatch({
       type: "checkSession_ok",
       payload: { user: res.data, token: token },
@@ -40,3 +39,13 @@ export const checkSession = async (token, navigate, dispatch) => {
     navigate('/login');
   }
 };
+
+export const logOutUser = (navigate, dispatch) => {
+  try {
+    dispatch({ type: "logout_user_ok" });
+    localStorage.removeItem("token");
+    navigate("/");
+  } catch (error) {
+    dispatch({ type: "logout_user_error", payload: error.message });
+  }
+}

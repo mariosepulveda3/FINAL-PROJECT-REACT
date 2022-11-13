@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
+import LogOutButton from "./LogOutButton";
 import NavBarLink from "./NavBarLink";
 
 const Navbar = () => {
@@ -14,6 +15,7 @@ const Navbar = () => {
       {token &&
         <NavBarLink route="addMovie" name="AddMovie" />
       }
+      <LogOutButton />
 
     </nav>
   );
