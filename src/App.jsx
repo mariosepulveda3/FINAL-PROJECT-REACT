@@ -5,7 +5,6 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import AddMovie from "./pages/AddMovie";
 import Register from "./pages/Register";
-import Search from "./pages/Search";
 import AuthRoute from "./components/AuthRoute";
 import { useEffect } from "react";
 import { checkSession } from "./redux/auth/auth.functions";
@@ -28,9 +27,8 @@ function App() {
       <Navbar />
       <main>
       <Routes>
-        <Route path="" element={<Home />} />
-        <Route path='/search'>
-          <Route index element={<Search />} />
+        <Route path=''>
+          <Route index element={<Home />} />
           <Route path=":title" element={<MovieInfo />} />
         </Route>
         <Route path="/login" element={<Login />} />

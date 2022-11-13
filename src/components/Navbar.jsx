@@ -8,7 +8,6 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <NavBarLink route="" name="Home" />
-      <NavBarLink route="search" name="Search" />
       <NavBarLink route="login" name="Login" />
       <NavBarLink route="register" name="Register" />
       {token && (
