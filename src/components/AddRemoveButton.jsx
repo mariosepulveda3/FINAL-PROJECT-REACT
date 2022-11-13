@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { addToCart, removeFromCart } from "../redux/cart/cart.functions";
 import GenericButton from "./GenericButton";
 
 const AddRemoveButton = ({movie}) => {
@@ -13,11 +14,7 @@ const AddRemoveButton = ({movie}) => {
 		<>
 			{token && !movie.inCart && (
 				<GenericButton
-					func={() => {
-						dispatch({ type: "addMovie", payload: movie });
-						movie.inCart = true;
-						navigate("");
-					}}
+					func={() => addToCart(movie, navigate, dispatch)}
 					text="Add to cart"
 					size="s"
 					borderRadius="4px"
@@ -25,11 +22,7 @@ const AddRemoveButton = ({movie}) => {
 			)}
 			{token && movie.inCart && (
 				<GenericButton
-					func={() => {
-						dispatch({ type: "removeMovie", payload: movie });
-						movie.inCart = false;
-						navigate("");
-					}}
+					func={() => removeFromCart(movie, navigate, dispatch)}
 					text="Remove from cart"
 					size="s"
 					borderRadius="4px"
