@@ -43,6 +43,7 @@ export const checkSession = async (token, navigate, dispatch) => {
 export const logOutUser = (navigate, dispatch) => {
   try {
     dispatch({ type: "logout_user_ok" });
+    dispatch({ type: "removeAll" })
     localStorage.removeItem("token");
     navigate("/");
   } catch (error) {

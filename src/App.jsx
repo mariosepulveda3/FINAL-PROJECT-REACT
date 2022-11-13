@@ -10,6 +10,7 @@ import AuthRoute from "./components/AuthRoute";
 import { useEffect } from "react";
 import { checkSession } from "./redux/auth/auth.functions";
 import { useDispatch } from "react-redux";
+import Cart from "./pages/Cart";
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/addMovie" element={<AuthRoute component={<AddMovie/>} />} />
+        <Route path="/cart" element={<AuthRoute component={<Cart />} />} />
       </Routes>
       </main>
     </div>

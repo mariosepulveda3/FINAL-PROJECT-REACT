@@ -7,6 +7,7 @@ export const getMovies = async (dispatch) => {
       dispatch({type: 'gettingMovies'});
       const res = await axios.get("http://localhost:3000/movies");
 
+      res.data.map(movie => movie.inCart = false)
       dispatch({type: 'getMovies', payload: res.data});
       
     } catch (error) {

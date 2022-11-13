@@ -2,7 +2,8 @@ const INITIAL_STATE = {
     movies: [],
     isLoading: false,
     error: false,
-    search: ""
+    search: "",
+    moviesGotten: false
 }
 
 const moviesReducer = (state = INITIAL_STATE, action) => {
@@ -11,7 +12,7 @@ const moviesReducer = (state = INITIAL_STATE, action) => {
             return {...state, isLoading : true};
         
         case 'getMovies':
-            return {...state, isLoading: false, movies: action.payload, error: false};
+            return {...state, isLoading: false, movies: action.payload, error: false, moviesGotten: true};
             
         case 'errorMovies':
             return {...state, isLoading: false, movies: [], error: action.payload};

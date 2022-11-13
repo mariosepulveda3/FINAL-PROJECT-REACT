@@ -6,13 +6,13 @@ import { getMovies } from "../redux/movies/movies.functions";
 
 const Search = () => {
   const dispatch = useDispatch();
-  const { movies, isLoading, search, error } = useSelector(
+  const { movies, isLoading, search, error, moviesGotten } = useSelector(
     (state) => state.movies
   );
-
+  
   useEffect(() => {
-    getMovies(dispatch);
-  }, []);
+    !moviesGotten && getMovies(dispatch);
+  }, [])
 
   return (
     <div className="search">
@@ -32,7 +32,7 @@ const Search = () => {
         <div className="divPelis">
           {movies.map((movie) => {
             return movie.title.toLowerCase().includes(search) && (
-              <Movie key={JSON.stringify(movie)} movie={movie} />
+              <Movie key={JSON.stringify(movie)} movie={movie} cartUp={true}/>
             );
           })}
         </div>

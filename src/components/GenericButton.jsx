@@ -3,8 +3,8 @@ import React from "react";
 const GenericButton = ({
   text,
   size,
-  bgColor,
-  textColor,
+  bgColor = "whitesmoke",
+  textColor = "black",
   func,
   borderRadius,
   hover = true,
@@ -23,6 +23,9 @@ const GenericButton = ({
       width = "200px";
       break;
     case 's':
+      width = "150px";
+      break;
+    case 'xs':
       width = "100px";
       break;
 

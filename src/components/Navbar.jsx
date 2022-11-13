@@ -11,8 +11,12 @@ const Navbar = () => {
       <NavBarLink route="search" name="Search" />
       <NavBarLink route="login" name="Login" />
       <NavBarLink route="register" name="Register" />
-      {token &&
-        <NavBarLink route="addMovie" name="AddMovie" />
+      {token && (
+        <>
+          <NavBarLink route="addMovie" name="AddMovie" />
+          <NavBarLink route="cart" name="Cart" />
+        </>
+      )
       }
       <LogOutButton />
 
