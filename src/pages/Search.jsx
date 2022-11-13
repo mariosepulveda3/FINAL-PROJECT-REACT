@@ -33,7 +33,9 @@ const Search = () => {
       {isLoading && (<h2>Loading movies...</h2>)}
       {error && (<h2>{error}</h2>)}
       {movies.length > 0 &&
-        movies.map((movie) => <Movie key={JSON.stringify(movie)} movie={movie} search={search}/>)}
+        <div className="divPelis">
+          {movies.map((movie) => <Movie key={JSON.stringify(movie)} movie={movie} search={search}/>)}
+        </div>}
     </div>
   );
 };

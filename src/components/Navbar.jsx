@@ -16,6 +16,9 @@ const Navbar = () => {
       <NavLink to="register" activeclassname={"active"}>
         Register
       </NavLink>
+      <NavLink to="addMovie" activeclassname={"active"}>
+        Add movie
+      </NavLink>
     </nav>
   );
 };

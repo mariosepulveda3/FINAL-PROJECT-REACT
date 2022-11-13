@@ -3,6 +3,7 @@ import "./App.scss";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import AddMovie from "./pages/AddMovie";
 import Register from "./pages/Register";
 import Search from "./pages/Search";
 
@@ -16,6 +17,7 @@ function App() {
         <Route path='/search' element={<Search/>}/>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/addMovie" element={<AddMovie />} />
       </Routes>
       </main>
     </div>

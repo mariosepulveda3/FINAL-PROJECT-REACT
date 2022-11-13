@@ -12,13 +12,25 @@ const moviesReducer = (state = INITIAL_STATE, action) => {
         
         case 'getMovies':
             return {...state, isLoading: false, movies: action.payload, error: false};
-        
+            
+        case 'errorMovies':
+            return {...state, isLoading: false, movies: [], error: action.payload};
+            
+
         case 'searchMovies':
             return {...state, search: action.payload}
 
-        case 'errorMovies':
+        
+        case 'postingMovies':
+            return {...state, isLoading : true};
+        
+        case 'postMovies':
+            return {...state, isLoading: false, movies: action.payload, error: false};
+        
+        case 'errorPostMovies':
             return {...state, isLoading: false, movies: [], error: action.payload};
-
+        
+        
         default:
             return state;
     }
