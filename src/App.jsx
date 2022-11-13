@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import AddMovie from "./pages/AddMovie";
 import Register from "./pages/Register";
 import Search from "./pages/Search";
+import AuthRoute from "./components/AuthRoute";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
         <Route path='/search' element={<Search/>}/>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/addMovie" element={<AddMovie />} />
+        <Route path="/addMovie" element={<AuthRoute component={<AddMovie/>} />} />
       </Routes>
       </main>
     </div>

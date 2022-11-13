@@ -30,8 +30,6 @@
 
   .movie {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
     cursor: pointer;
 
     .container {
@@ -55,6 +53,11 @@
   .search {
     text-align: center;
 
+    .divPelis {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
     input {
       text-align: center;
       margin-top: 50px;
@@ -69,7 +72,8 @@
   }
 
   .register,
-  .login {
+  .login  
+  {
     text-align: center;
     background-image: url("https://images.ecestaticos.com/leU_vr7vwdksdq_fkLknTvqTmlw=/0x90:1696x1041/1600x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F4eb%2Fa77%2F5f9%2F4eba775f9bbe9f2f8c602b8731e81a46.jpg");
 
