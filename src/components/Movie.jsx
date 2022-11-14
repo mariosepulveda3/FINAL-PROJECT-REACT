@@ -12,8 +12,8 @@ const Movie = ({ movie }) => {
 
 			</div>
 			<img src={movie.img} alt={movie.title} referrerPolicy="no-referrer" />
-			<AddRemoveButton movie={movie} />
 			<GenericButton text={<Link to={`/${movie.title}`}>See more</Link>} size="s" borderRadius="4px" />
+			<AddRemoveButton movie={movie} />
 		</div>
 	);
 };
