@@ -1,4 +1,4 @@
-import './styles/Home.scss';
+import "./styles/Home.scss";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Movie from "../components/Movie";
@@ -10,6 +10,10 @@ const Home = () => {
 
 	useEffect(() => {
 		!moviesGotten && getMovies(dispatch);
+		dispatch({
+			type: "searchMovies",
+			payload: "",
+		});
 	}, []);
 
 	return (
@@ -30,10 +34,11 @@ const Home = () => {
 				<div className="container">
 					{movies.map((movie) => {
 						return (
-							movie.title.toLowerCase().includes(search) && (
+							(movie.title.toLowerCase().includes(search) 
+							||movie.director.toLowerCase().includes(search)
+							|| String(movie.year).includes(search)) && (
 								<Movie key={JSON.stringify(movie)} movie={movie} cartUp={true} />
 							)
-							// Search by Director and Year
 						);
 					})}
 				</div>
