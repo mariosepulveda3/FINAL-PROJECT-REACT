@@ -1,36 +1,43 @@
 .movie {
-    display: grid;
+	color: rgb(255, 255, 255);
+	background-color: rgba(0, 0, 0, 0.644);
+	padding: 10px;
+	margin: 10px;
+	max-width: 220px;
+	border: solid 1px rgba(245, 245, 245, 0.294);
 
+	&:hover {
+		transform: scale(1.01);
+	}
+
+  .title{
+    min-height: 35px;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-block: 5px;
+    
     h4 {
-      margin-block: 5px;
+      max-width: 100%;
+      overflow-wrap: break-word;
+      height: fit-content;
     }
+  }
 
-    .container {
-      color: rgb(255, 255, 255);
-      background-color: rgba(0, 0, 0, 0.644);
-      padding: 10px;
-      margin: 10px;
-      max-width: 220px;
-      border: solid 1px rgba(245, 245, 245, 0.294);
-      &:hover {
-        transform: scale(1.01);
-      }
-    }
+	img {
+		width: 100%;
+		height: 300px;
+		border: solid 1px rgba(245, 245, 245, 0.294);
+		object-fit: cover;
+	}
 
-    img {
-      margin: 5px;
-      width: 90%;
-      height: 75%;
-      border: solid 1px rgba(245, 245, 245, 0.294);
+	a {
+		text-decoration: none;
+		color: black;
+	}
 
-    }
-
-    a {
-      text-decoration: none;
-      color: black;
-    }
-
-    button {
-      border: solid rgb(235, 197, 100);
-    }
-  };
+	button {
+		border: solid rgb(235, 197, 100);
+	}
+}

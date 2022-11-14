@@ -6,6 +6,7 @@ import NavBarLink from "./NavBarLink";
 
 const Navbar = () => {
 	const { user, token } = useSelector((state) => state.auth);
+  console.log(user);
 
 	return (
 		<nav className="navbar">
@@ -19,6 +20,7 @@ const Navbar = () => {
 				)}
 			</div>
 			<img
+        className="logo"
 				src="https://i0.wp.com/www.movieaddicts.nl/wp-content/uploads/2015/08/LOGO-MOVIEADDICTS-1.png?fit=822%2C464&ssl=1"
 				alt="logo"
 			/>
