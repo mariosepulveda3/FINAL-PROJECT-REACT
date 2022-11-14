@@ -6,8 +6,6 @@ import NavBarLink from "./NavBarLink";
 
 const Navbar = () => {
 	const { user, token } = useSelector((state) => state.auth);
-  console.log(user);
-
 	return (
 		<nav className="navbar">
 			<div className="home">
@@ -15,7 +13,13 @@ const Navbar = () => {
 				{token && (
 					<>
 						<NavBarLink route="cart" name="Cart" />
-						{user.rol === "admin" && <NavBarLink route="addMovie" name="Add Movie" />}
+						{user.rol === "admin" && (
+							<>
+								<NavBarLink route="addMovie" name="Add Movie" />
+								<NavBarLink route="editMovie" name="Edit Movie" />
+								<NavBarLink route="deleteMovie" name="Delete Movie" />
+							</>
+						)}
 					</>
 				)}
 			</div>

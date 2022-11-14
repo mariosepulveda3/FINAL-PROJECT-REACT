@@ -14,12 +14,42 @@ export const getMovies = async (dispatch) => {
 
 export const postMovie = async (formdata, movies, dispatch) => {
 	try {
-		
 		dispatch({ type: "postingMovies" });
 		const res = await API2.post("/movies/create", formdata);
 		res.data.inCart = false;
-		movies.push(res.data)
+		movies.push(res.data);
 		dispatch({ type: "postMovies", payload: movies });
+	} catch (error) {
+		console.log(error);
+		dispatch({ type: "errorPostMovies", payload: error.response.data });
+	}
+};
+
+export const putMovie = async (formdata, movies, dispatch) => {
+	try {
+		dispatch({ type: "postingMovies" });
+		await API2.put(`/movies/edit/${formdata._id}`, formdata);
+		const res = await API.get(`/movies/id/${formdata._id}`);
+		const newMovies = []
+		movies.map(
+			(mov) => {
+				newMovies.push(
+					mov._id === res.data._id
+						? {
+							...mov,
+							_id: res.data._id,
+							title: res.data.title,
+							img: res.data.img,
+							description: res.data.description,
+							year: res.data.year,
+							director: res.data.director,
+						  }
+						  : mov );
+				return mov
+			}
+		);
+		dispatch({ type: "postMovies", payload: newMovies });
+
 	} catch (error) {
 		console.log(error);
 		dispatch({ type: "errorPostMovies", payload: error.response.data });

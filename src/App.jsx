@@ -13,6 +13,8 @@ import Cart from "./pages/Cart";
 import MovieInfo from "./pages/MovieInfo";
 import Footer from "./components/Footer";
 import AuthRouteAdmin from "./components/AuthRouteAdmin";
+import EditMovie from "./pages/EditMovie";
+import DeleteMovie from "./pages/DeleteMovie";
 
 function App() {
   const token = localStorage.getItem("token");
@@ -37,6 +39,8 @@ function App() {
           path="/addMovie"
           element={<AuthRouteAdmin component={<AddMovie />} />}
         />
+        <Route path="/editMovie" element={<AuthRouteAdmin component={<EditMovie />}/>} />
+        <Route path="/deleteMovie" element={<AuthRouteAdmin component={<DeleteMovie />}/>} />
         <Route path="/cart" element={<AuthRoute component={<Cart />} />} />
       </Routes>
       <Footer />

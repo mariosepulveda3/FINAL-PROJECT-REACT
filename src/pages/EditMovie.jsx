@@ -1,10 +1,9 @@
-import "./styles/AddMovie.scss";
-import React from "react";
-import { useForm } from "react-hook-form";
-import { useDispatch, useSelector } from "react-redux";
-import { postMovie } from "../redux/movies/movies.functions";
+import React from 'react'
+import { useForm } from 'react-hook-form';
+import { useDispatch, useSelector } from 'react-redux';
+import { putMovie } from '../redux/movies/movies.functions';
 
-const AddMovie = () => {
+const EditMovie = () => {
   const {
     register,
     handleSubmit,
@@ -13,17 +12,20 @@ const AddMovie = () => {
   const dispatch = useDispatch();
   const { movies, error } = useSelector((state) => state.movies);
 
-  const addMovie = (formdata) => {
+  const editMovie = (formdata) => {
     formdata.img = formdata.img[0];
 
-    postMovie(formdata, movies, dispatch);
+    putMovie(formdata, movies, dispatch);
   };
 
   return (
-    <div className="addMovie page">
-      <form onSubmit={handleSubmit(addMovie)}>
-        <h1>Add Movie</h1>
+    <div className='page'>
+      <form onSubmit={handleSubmit(editMovie)}>
+        <h1>Edit Movie</h1>
         <label>
+          <select name="_id" {...register("_id")} >
+            {movies.map(movie => <option key={JSON.stringify(movie)} value={movie._id}>{movie.title}</option>)}
+          </select>
           <p>Title</p>
           <input
             type="title"
@@ -61,6 +63,7 @@ const AddMovie = () => {
         <button>Submit</button>
       </form>
     </div>
-  );
-};
-export default AddMovie;
+  )
+}
+
+export default EditMovie
