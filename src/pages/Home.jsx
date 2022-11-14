@@ -13,7 +13,7 @@ const Home = () => {
 	}, []);
 
 	return (
-		<div className="search">
+		<div className="search page">
 			<input
 				type="text"
 				onKeyUp={(e) =>

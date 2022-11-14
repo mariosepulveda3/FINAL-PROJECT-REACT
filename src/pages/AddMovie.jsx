@@ -20,7 +20,7 @@ const AddMovie = () => {
   };
 
   return (
-    <div className="addMovie">
+    <div className="addMovie page">
       <form onSubmit={handleSubmit(addMovie)}>
         <h1>Add Movie</h1>
         <label>

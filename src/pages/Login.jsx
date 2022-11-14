@@ -19,7 +19,7 @@ const Login = () => {
   };
 
   return (
-    <div className="login">
+    <div className="login page">
       <div className="container">
         {error && <h2>{error}</h2>}
         {isLoading && <h2>Checking User</h2>}

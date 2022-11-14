@@ -20,7 +20,7 @@ const Register = () => {
   };
 
   return (
-    <div className="register">
+    <div className="register page">
       <div className="container">
         <form onSubmit={handleSubmit(registerUser)}>
           <h1>Register</h1>

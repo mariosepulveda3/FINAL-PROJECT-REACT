@@ -5,16 +5,19 @@
   padding: 20px 30px 10px 30px;
   background: rgb(0, 0, 0);
   border-bottom: solid rgb(235, 197, 100);
+  height: 20vh;
 
   .home {
     display: flex;
     flex-direction: column;
+    gap: 10px
   }
 
   .user {
     display: flex;
     flex-direction: column;
     text-align: end;
+    gap: 10px
   }
 
   button {
@@ -29,7 +32,6 @@
     font-size: 20px;
     font-weight: bolder;
     text-decoration: none;
-    margin-bottom: 10px;
     color: rgb(255, 255, 255);
   }
 

@@ -9,7 +9,7 @@ const Cart = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className="cart">
+    <div className="cart page">
       <div className="container">
         <GenericButton
           text="Remove all"

@@ -13,7 +13,7 @@ const MovieInfo = () => {
   movies.map((mov) => (movie = mov.title === title ? mov : movie));
 
   return (
-    <div className="movie-info">
+    <div className="movie-info page">
     <div className="container">
       <div className="title-image">
         <h3>{movie.title}</h3>
