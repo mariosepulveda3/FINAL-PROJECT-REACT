@@ -1,0 +1,19 @@
+.cart {
+  padding: 50px 100px;
+  background: rgba(0, 0, 0, 0.855);
+
+  .container {
+    text-align: center;
+
+    button {
+      margin-block: 5px;
+      border-color: rgb(235, 197, 100);
+    }
+
+    .movies-cart {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+}

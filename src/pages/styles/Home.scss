@@ -1,0 +1,28 @@
+.search {
+  background: rgba(0, 0, 0, 0.855);
+  text-align: center;
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  button {
+    margin-block: 5px;
+  }
+
+  input {
+    font-size: 18px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    padding: 5px 50px;
+    border: solid 1px rgb(235, 197, 100);
+
+    @media screen and (max-width: 500px) {
+      margin-top: 25px;
+      font-size: 10px;
+    }
+  }
+}

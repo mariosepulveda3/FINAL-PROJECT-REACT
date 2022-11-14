@@ -1,0 +1,43 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px 10px 30px;
+  background: rgb(0, 0, 0);
+  border-bottom: solid rgb(235, 197, 100);
+
+  .home {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .user {
+    display: flex;
+    flex-direction: column;
+    text-align: end;
+  }
+
+  button {
+    border: solid rgb(235, 197, 100);
+  }
+
+  img {
+    width: 200px;
+  }
+
+  a {
+    font-size: 20px;
+    font-weight: bolder;
+    text-decoration: none;
+    margin-bottom: 10px;
+    color: rgb(255, 255, 255);
+  }
+
+  @media screen and (max-width: 500px) {
+    padding: 20px;
+
+    a {
+      font-size: 15px;
+    }
+  }
+}

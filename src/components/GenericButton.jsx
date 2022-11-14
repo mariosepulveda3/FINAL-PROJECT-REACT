@@ -6,6 +6,7 @@ const GenericButton = ({
 	bgColor = "whitesmoke",
 	textColor = "black",
 	func,
+	pad,
 	borderRadius,
 	hover = true,
 	fontSize = "1rem",
@@ -39,6 +40,7 @@ const GenericButton = ({
 		borderRadius: borderRadius,
 		width: width,
 		fontSize: fontSize,
+		padding: pad,
 	};
 
 	style.cursor = hover && "pointer";

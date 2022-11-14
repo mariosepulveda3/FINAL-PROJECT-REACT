@@ -1,0 +1,36 @@
+.movie {
+    display: grid;
+
+    h4 {
+      margin-block: 5px;
+    }
+
+    .container {
+      color: rgb(255, 255, 255);
+      background-color: rgba(0, 0, 0, 0.644);
+      padding: 10px;
+      margin: 10px;
+      width: 220px;
+      border: solid 1px rgba(245, 245, 245, 0.294);
+      &:hover {
+        transform: scale(1.01);
+      }
+    }
+
+    img {
+      margin: 5px;
+      width: 90%;
+      height: 75%;
+      border: solid 1px rgba(245, 245, 245, 0.294);
+
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+
+    button {
+      border: solid rgb(235, 197, 100);
+    }
+  };

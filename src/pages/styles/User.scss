@@ -1,0 +1,61 @@
+.register,
+.login {
+  padding: 50px 100px;
+  background: rgba(0, 0, 0, 0.855);
+
+  .container {
+    text-align: center;
+
+    form {
+      color: whitesmoke;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      background: rgba(101, 100, 100, 0.567);
+      padding: 30px;
+      border: solid rgba(0, 0, 0, 0.215);
+
+      @media screen and (max-width: 500px) {
+        margin-inline: 75px;
+        padding: 10px;
+      }
+    }
+
+    h1 {
+      margin-block: 25px;
+      color: whitesmoke;
+      font-size: 25px;
+
+      @media screen and (max-width: 500px) {
+        padding-block: 20px;
+        font-size: 18px;
+      }
+    }
+
+    label {
+      display: flex;
+      flex-direction: column;
+      margin-block: 10px;
+    }
+
+    input {
+      font-size: 20px;
+      color: whitesmoke;
+      text-align: center;
+      background: transparent;
+      outline: none;
+      border: 0;
+      border-bottom: 1px solid rgb(255, 255, 255);
+      font-family: "Roboto Mono", monospace;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin-top: 20px;
+      background: rgba(0, 0, 0, 0.676);
+      color: whitesmoke;
+      border-color: rgb(235, 197, 100);
+      cursor: pointer;
+    }
+  }
+}
