@@ -24,7 +24,7 @@ const AddMovie = () => {
       <form onSubmit={handleSubmit(addMovie)}>
         <h1>Add Movie</h1>
         <label>
-          Title
+          <p>Title</p>
           <input
             type="title"
             name="title"
@@ -35,9 +35,10 @@ const AddMovie = () => {
         </label>
         {errors.title && <p>{errors.title.message}</p>}
         <label>
-          Image
+        <p>Image</p>
           <input
             type="file"
+            title="dasasdasdsadasdasdasdsadasdasdasdasd"
             name="img"
             {...register("img", {
               required: "Introduce an image",
@@ -46,15 +47,15 @@ const AddMovie = () => {
         </label>
         {errors.title && <p>{errors.title.message}</p>}
         <label>
-          Description
+          <p>Description</p>
           <input type="text" name="description" {...register("description")} />
         </label>
         <label>
-          Year
+          <p>Year</p>
           <input type="number" name="year" {...register("year")} />
         </label>
         <label>
-          Director
+          <p>Director</p>
           <input type="text" name="director" {...register("director")} />
         </label>
         <button>Submit</button>
