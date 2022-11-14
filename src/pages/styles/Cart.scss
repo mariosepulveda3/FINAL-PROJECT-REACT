@@ -1,9 +1,11 @@
 .cart {
   padding: 50px 100px;
   background: rgba(0, 0, 0, 0.855);
+  display: flex;
 
   .container {
     text-align: center;
+    width: 100%;
 
     button {
       margin-block: 5px;
@@ -14,6 +16,29 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+    }
+  }
+
+  .payment-form {
+    display: flex;
+    flex-flow: column;
+    gap: 10px;
+    width: 20vw;
+    border: solid rgb(235, 197, 100) 2px;
+    padding: 10px;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+    
+    label {
+      display: flex;
+      flex-flow: column;
+    }
+
+    button {
+      align-self: center;
     }
   }
 }

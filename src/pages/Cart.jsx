@@ -25,6 +25,26 @@ const Cart = () => {
           ))}
         </div>
       </div>
+      <form className="payment-form">
+        <h2>PAY WITH CARD</h2>
+        <label>
+          Cardholder
+          <input type="text"/>
+        </label>
+        <label>
+          Card Nº
+          <input type="text"/>
+        </label>
+        <label>
+          CVV
+          <input type="text"/>
+        </label>
+        <label>
+          Expiration date
+          <input type="text"/>
+        </label>
+        <GenericButton size="xs" text="Pay" padding="3px" func={(e) => e.preventDefault()}/>
+      </form>
     </div>
   );
 };
