@@ -13,7 +13,7 @@ const authReducer = (state = INITIAL_STATE, action) => {
 			return {
 				...state,
 				isLoading: false,
-				user: action.payload.userDB.email,
+				user: action.payload.userDB,
 				token: action.payload.token,
 				error: false,
 			};

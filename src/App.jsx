@@ -12,6 +12,7 @@ import { useDispatch } from "react-redux";
 import Cart from "./pages/Cart";
 import MovieInfo from "./pages/MovieInfo";
 import Footer from "./components/Footer";
+import AuthRouteAdmin from "./components/AuthRouteAdmin";
 
 function App() {
   const token = localStorage.getItem("token");
@@ -34,7 +35,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route
           path="/addMovie"
-          element={<AuthRoute component={<AddMovie />} />}
+          element={<AuthRouteAdmin component={<AddMovie />} />}
         />
         <Route path="/cart" element={<AuthRoute component={<Cart />} />} />
       </Routes>
