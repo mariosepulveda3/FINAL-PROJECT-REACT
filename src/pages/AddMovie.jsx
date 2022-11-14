@@ -38,7 +38,6 @@ const AddMovie = () => {
         <p>Image</p>
           <input
             type="file"
-            title="dasasdasdsadasdasdasdsadasdasdasdasd"
             name="img"
             {...register("img", {
               required: "Introduce an image",
@@ -58,7 +57,7 @@ const AddMovie = () => {
           <p>Director</p>
           <input type="text" name="director" {...register("director")} />
         </label>
-        <button>Submit</button>
+        <button>Add</button>
       </form>
     </div>
   );

@@ -30,12 +30,11 @@ export const putMovie = async (formdata, movies, dispatch) => {
 		dispatch({ type: "postingMovies" });
 		await API2.put(`/movies/edit/${formdata._id}`, formdata);
 		const res = await API.get(`/movies/id/${formdata._id}`);
-		const newMovies = []
-		movies.map(
-			(mov) => {
-				newMovies.push(
-					mov._id === res.data._id
-						? {
+		const newMovies = [];
+		movies.forEach((mov) => {
+			newMovies.push(
+				mov._id === res.data._id
+					? {
 							...mov,
 							_id: res.data._id,
 							title: res.data.title,
@@ -43,13 +42,28 @@ export const putMovie = async (formdata, movies, dispatch) => {
 							description: res.data.description,
 							year: res.data.year,
 							director: res.data.director,
-						  }
-						  : mov );
-				return mov
-			}
-		);
+					  }
+					: mov
+			);
+		});
 		dispatch({ type: "postMovies", payload: newMovies });
+	} catch (error) {
+		console.log(error);
+		dispatch({ type: "errorPostMovies", payload: error.response.data });
+	}
+};
 
+export const deleteMovie = async (formdata, movies, dispatch) => {
+	try {
+		dispatch({ type: "postingMovies" });
+		await API2.delete(`/movies/delete/${formdata._id}`);
+		const newMovies = [];
+		movies.forEach((mov) => {
+			if (!(mov._id === formdata._id)) {
+				newMovies.push(mov);
+			}
+		});
+		dispatch({ type: "postMovies", payload: newMovies });
 	} catch (error) {
 		console.log(error);
 		dispatch({ type: "errorPostMovies", payload: error.response.data });
