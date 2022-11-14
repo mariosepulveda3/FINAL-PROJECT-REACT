@@ -11,6 +11,7 @@ import { checkSession } from "./redux/auth/auth.functions";
 import { useDispatch } from "react-redux";
 import Cart from "./pages/Cart";
 import MovieInfo from "./pages/MovieInfo";
+import Footer from "./components/Footer";
 
 function App() {
   const token = localStorage.getItem("token");
@@ -37,6 +38,7 @@ function App() {
         />
         <Route path="/cart" element={<AuthRoute component={<Cart />} />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
