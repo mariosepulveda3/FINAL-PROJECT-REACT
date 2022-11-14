@@ -1,10 +1,9 @@
-import axios from "axios";
-import { API } from "../../shared/services/api";
+import { API, API2 } from "../../shared/services/api";
 
 export const getMovies = async (dispatch) => {
 	try {
 		dispatch({ type: "gettingMovies" });
-		const res = await axios.get("http://localhost:3000/movies");
+		const res = await API.get("/movies");
 
 		res.data.map((movie) => (movie.inCart = false));
 		dispatch({ type: "getMovies", payload: res.data });
@@ -13,13 +12,14 @@ export const getMovies = async (dispatch) => {
 	}
 };
 
-export const postMovie = async (formdata, dispatch) => {
+export const postMovie = async (formdata, movies, dispatch) => {
 	try {
-		console.log(formdata);
+		
 		dispatch({ type: "postingMovies" });
-		const res = await API.post("/movies/create", formdata);
-		console.log(res);
-		dispatch({ type: "postMovies", payload: res.data });
+		const res = await API2.post("/movies/create", formdata);
+		res.data.inCart = false;
+		movies.push(res.data)
+		dispatch({ type: "postMovies", payload: movies });
 	} catch (error) {
 		console.log(error);
 		dispatch({ type: "errorPostMovies", payload: error.response.data });

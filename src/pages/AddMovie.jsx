@@ -16,14 +16,7 @@ const AddMovie = () => {
   const addMovie = (formdata) => {
     formdata.img = formdata.img[0];
 
-    /* const formData = new FormData();
-    formData.append("title", datosFormulario.title);
-    formData.append("description", datosFormulario.description);
-    formData.append("year", datosFormulario.year);
-    formData.append("director", datosFormulario.director);
-    formData.append("img", datosFormulario.img[0]); */
-
-    postMovie(formdata, dispatch);
+    postMovie(formdata, movies, dispatch);
   };
 
   return (
@@ -66,7 +59,7 @@ const AddMovie = () => {
         </label>
         <button>Submit</button>
       </form>
-      <p>{movies.title}</p>
+      
     </div>
   );
 };
