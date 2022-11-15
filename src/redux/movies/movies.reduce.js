@@ -29,6 +29,24 @@ const moviesReducer = (state = INITIAL_STATE, action) => {
 		case "errorPostMovies":
 			return { ...state, isLoading: false, movies: [], error: action.payload };
 
+		case "puttingMovies":
+			return { ...state, isLoading: true };
+
+		case "putMovies":
+			return { ...state, isLoading: false, movies: action.payload, error: false };
+
+		case "errorPuMovies":
+			return { ...state, isLoading: false, movies: [], error: action.payload };
+
+		case "deletingMovies":
+			return { ...state, isLoading: true };
+
+		case "deleteMovies":
+			return { ...state, isLoading: false, movies: action.payload, error: false };
+
+		case "errorDeleteMovies":
+			return { ...state, isLoading: false, movies: [], error: action.payload };
+
 		default:
 			return state;
 	}

@@ -21,8 +21,8 @@ const Login = () => {
   return (
     <div className="login page">
       <div className="container">
-        {error && <h2>{error}</h2>}
-        {isLoading && <h2>Checking User</h2>}
+        {error && <h2 className="error">{error}</h2>}
+        {isLoading && <h2 className="loading">Logging User</h2>}
         <form onSubmit={handleSubmit(login)}>
           <h1>Log In</h1>
           <label>

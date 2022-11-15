@@ -8,7 +8,7 @@ import "./styles/MovieCRUD.scss";
 const DeleteMovie = () => {
 	const { register, handleSubmit } = useForm();
 	const dispatch = useDispatch();
-	const { movies, error } = useSelector((state) => state.movies);
+	const { movies, error, isLoading } = useSelector((state) => state.movies);
 
 	const removeMovie = (formdata) => {
 		deleteMovie(formdata, movies, dispatch);
@@ -16,6 +16,8 @@ const DeleteMovie = () => {
 	return (
 		<div className="mainContainer page">
 			<div className="formContainer">
+				{error && <h2 className="error">{error}</h2>}
+				{isLoading && <h2 className="loading">Deleting movie...</h2>}
 				<h1>Delete Movie</h1>
 				<form onSubmit={handleSubmit(removeMovie)} className="deleteForm">
 					<select name="_id" {...register("_id")}>
@@ -25,7 +27,13 @@ const DeleteMovie = () => {
 							</option>
 						))}
 					</select>
-                    <GenericButton text="Delete" bgColor="rgba(0, 0, 0, 0.676)" textColor="whitesmoke" size="m" borderRadius="10px"/>
+					<GenericButton
+						text="Delete"
+						bgColor="rgba(0, 0, 0, 0.676)"
+						textColor="whitesmoke"
+						size="m"
+						borderRadius="10px"
+					/>
 				</form>
 			</div>
 		</div>

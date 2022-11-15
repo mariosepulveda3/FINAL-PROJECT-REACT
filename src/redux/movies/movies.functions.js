@@ -27,7 +27,7 @@ export const postMovie = async (formdata, movies, dispatch) => {
 
 export const putMovie = async (formdata, movies, dispatch) => {
 	try {
-		dispatch({ type: "postingMovies" });
+		dispatch({ type: "puttingMovies" });
 		await API2.put(`/movies/edit/${formdata._id}`, formdata);
 		const res = await API.get(`/movies/id/${formdata._id}`);
 		const newMovies = [];
@@ -46,16 +46,16 @@ export const putMovie = async (formdata, movies, dispatch) => {
 					: mov
 			);
 		});
-		dispatch({ type: "postMovies", payload: newMovies });
+		dispatch({ type: "putMovies", payload: newMovies });
 	} catch (error) {
 		console.log(error);
-		dispatch({ type: "errorPostMovies", payload: error.response.data });
+		dispatch({ type: "errorPutMovies", payload: error.response.data });
 	}
 };
 
 export const deleteMovie = async (formdata, movies, dispatch) => {
 	try {
-		dispatch({ type: "postingMovies" });
+		dispatch({ type: "deletingMovies" });
 		await API2.delete(`/movies/delete/${formdata._id}`);
 		const newMovies = [];
 		movies.forEach((mov) => {
@@ -63,9 +63,9 @@ export const deleteMovie = async (formdata, movies, dispatch) => {
 				newMovies.push(mov);
 			}
 		});
-		dispatch({ type: "postMovies", payload: newMovies });
+		dispatch({ type: "deleteMovies", payload: newMovies });
 	} catch (error) {
 		console.log(error);
-		dispatch({ type: "errorPostMovies", payload: error.response.data });
+		dispatch({ type: "errorDeleteMovies", payload: error.response.data });
 	}
 };

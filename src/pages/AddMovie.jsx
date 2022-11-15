@@ -12,7 +12,7 @@ const AddMovie = () => {
 		formState: { errors },
 	} = useForm();
 	const dispatch = useDispatch();
-	const { movies, error } = useSelector((state) => state.movies);
+	const { movies, error, isLoading } = useSelector((state) => state.movies);
 
 	const addMovie = (formdata) => {
 		formdata.img = formdata.img[0];
@@ -23,6 +23,8 @@ const AddMovie = () => {
 	return (
 		<div className="mainContainer page">
 			<div className="formContainer">
+				{error && <h2 className="error">{error}</h2>}
+				{isLoading && <h2 className="loading">Adding movie...</h2>}
 				<h1>Add Movie</h1>
 				<form onSubmit={handleSubmit(addMovie)}>
 					<label>
@@ -59,7 +61,13 @@ const AddMovie = () => {
 						<p>Director</p>
 						<input type="text" name="director" {...register("director")} />
 					</label>
-					<GenericButton text="Add" bgColor="rgba(0, 0, 0, 0.676)" textColor="whitesmoke" size="m" borderRadius="10px"/>
+					<GenericButton
+						text="Add"
+						bgColor="rgba(0, 0, 0, 0.676)"
+						textColor="whitesmoke"
+						size="m"
+						borderRadius="10px"
+					/>
 				</form>
 			</div>
 		</div>
