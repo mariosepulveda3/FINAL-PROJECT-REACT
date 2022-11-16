@@ -15,6 +15,7 @@ import Footer from "./components/Footer";
 import AuthRouteAdmin from "./components/AuthRouteAdmin";
 import EditMovie from "./pages/EditMovie";
 import DeleteMovie from "./pages/DeleteMovie";
+import WelcomeUser from "./pages/WelcomeUser";
 
 function App() {
   const token = localStorage.getItem("token");
@@ -35,6 +36,7 @@ function App() {
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/user" element={<WelcomeUser />} />
         <Route
           path="/addMovie"
           element={<AuthRouteAdmin component={<AddMovie />} />}

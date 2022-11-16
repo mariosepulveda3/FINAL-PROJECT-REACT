@@ -2,7 +2,7 @@
   background: rgba(0, 0, 0, 0.855);
   padding: 50px 100px;
 
-  .formContainer{
+  .formContainer {
     background: rgba(205, 205, 205, 0.814);
     padding-left: 50px;
     padding-block: 20px;
@@ -15,30 +15,35 @@
       flex-flow: column;
       width: fit-content;
       align-items: center;
-  
+
       @media screen and (max-width: 500px) {
         margin-inline: 75px;
         padding: 10px;
       }
     }
-  
-    select{
+
+    select {
       text-align: center;
       padding-block: 4px;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.01);
+      }
     }
-  
+
     h1 {
       text-align: center;
       padding-block: 25px;
       font-size: 25px;
-  
+
       @media screen and (max-width: 500px) {
         padding-block: 20px;
         font-size: 18px;
       }
     }
-  
-    p{
+
+    p {
       width: 130px;
     }
     label {
@@ -46,29 +51,30 @@
       align-content: flex-start;
       margin-block: 10px;
     }
-  
+
     input {
       font-size: 15px;
-      background: transparent;;
+      background: transparent;
       outline: none;
       border: 0;
       border-bottom: 1px solid rgb(255, 255, 255);
       font-family: "Roboto Mono", monospace;
       width: 400px;
     }
-  
+
     button {
       padding: 10px 20px;
       margin-top: 20px;
       border-color: rgb(235, 197, 100);
       cursor: pointer;
-      
+
+      &:hover {
+        transform: scale(1.05);
+      }
     }
 
-    .deleteForm{
+    .deleteForm {
       align-self: center;
     }
   }
-
 }
-

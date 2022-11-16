@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import LogOutButton from "./LogOutButton";
 import NavBarLink from "./NavBarLink";
 import { Link } from "react-router-dom";
+import WelcomeUser from "../pages/WelcomeUser";
 
 const Navbar = () => {
 	const { user, token } = useSelector((state) => state.auth);
@@ -36,6 +37,7 @@ const Navbar = () => {
 				<NavBarLink route="register" name="Register" />
 				{token && (
 					<>
+						<NavBarLink route="user" name="Welcome User" />
 						<LogOutButton />
 					</>
 				)}

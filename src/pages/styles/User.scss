@@ -56,6 +56,10 @@
       color: whitesmoke;
       border-color: rgb(235, 197, 100);
       cursor: pointer;
+
+      &:hover {
+        transform: scale(1.02);
+      }
     }
   }
 }

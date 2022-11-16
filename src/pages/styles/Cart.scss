@@ -10,6 +10,10 @@
     button {
       margin-block: 5px;
       border-color: rgb(235, 197, 100);
+
+      &:hover {
+        transform: scale(1.03);
+      }
     }
 
     .movies-cart {
@@ -39,6 +43,10 @@
 
     button {
       align-self: center;
+
+      &:hover {
+        transform: scale(1.01);
+      }
     }
   }
 }

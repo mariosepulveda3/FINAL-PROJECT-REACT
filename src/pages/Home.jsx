@@ -28,7 +28,8 @@ const Home = () => {
 				}
 				placeholder="Search movie"
 			/>
-			{isLoading && <h2>Loading movies...</h2>}
+			{/* {isLoading && <h2>Loading movies...</h2>} */}
+			{/* {isLoading && <img src="https://i.stack.imgur.com/hzk6C.gif" alt="loading-gif"/>} */}
 			{error && <h2>{error}</h2>}
 			{movies.length > 0 && (
 				<div className="container">

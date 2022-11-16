@@ -1,0 +1,38 @@
+.welcome-user {
+    background: rgba(0, 0, 0, 0.855);
+    height: 65vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .card {
+        text-align: center;
+        width: 300px;
+        height: 400px;
+        padding: 20px;
+        color: whitesmoke;
+        border: solid 3px rgb(235, 197, 100);
+        background: rgba(52, 52, 52, 0.795);
+        border-radius: 50% 50% 5% 5%;
+
+        img {
+            border: solid 2px white;
+            border-radius: 50%;
+        }
+
+        .info {
+            margin-top: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        &:hover {
+            transform: scale(1.03);
+            color: black;
+            border: solid rgb(235, 197, 100);
+            background-color: rgb(166, 166, 166);
+        }
+
+    }
+}
