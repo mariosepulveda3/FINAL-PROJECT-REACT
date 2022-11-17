@@ -8,7 +8,7 @@ const INITIAL_STATE = {
 const authReducer = (state = INITIAL_STATE, action) => {
 	switch (action.type) {
 		case "login_user_start":
-			return { ...state, isLoading: true };
+			return { ...state, isLoading: true, error: false };
 		case "login_user_ok":
 			return {
 				...state,
@@ -27,14 +27,14 @@ const authReducer = (state = INITIAL_STATE, action) => {
 			};
 
 		case "register_user_start":
-			return { ...state, isLoading: true };
+			return { ...state, isLoading: true, error: false };
 		case "register_user_ok":
 			return { ...state, isLoading: false, error: false };
 		case "register_user_error":
 			return { ...state, isLoading: false, error: action.payload };
 
 		case "checkSession_start":
-			return { ...state, isLoading: true };
+			return { ...state, isLoading: true, error: false };
 		case "checkSession_ok":
 			return {
 				...state,

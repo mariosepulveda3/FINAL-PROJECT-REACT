@@ -9,7 +9,7 @@ const INITIAL_STATE = {
 const moviesReducer = (state = INITIAL_STATE, action) => {
 	switch (action.type) {
 		case "gettingMovies":
-			return { ...state, isLoading: true };
+			return { ...state, isLoading: true, error: false };
 
 		case "getMovies":
 			return { ...state, isLoading: false, movies: action.payload, error: false, moviesGotten: true };
@@ -18,7 +18,7 @@ const moviesReducer = (state = INITIAL_STATE, action) => {
 			return { ...state, isLoading: false, movies: [], error: action.payload };
 
 		case "searchMovies":
-			return { ...state, search: action.payload };
+			return { ...state, search: action.payload, error: false};
 
 		case "postingMovies":
 			return { ...state, isLoading: true };

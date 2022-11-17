@@ -24,6 +24,14 @@
     text-align: end;
     gap: 10px;
     width: 150px;
+
+    .welcome{
+      color: white;
+      font-size: 20px;
+      font-style: italic;
+      text-align: end;
+  
+    }
   }
 
   button {
@@ -56,4 +64,6 @@
   .active {
     color: rgb(235, 197, 100);
   }
+
+
 }

@@ -1,12 +1,13 @@
 import { API, API2 } from "../../shared/services/api";
 
-export const getMovies = async (dispatch) => {
+export const getMovies = async (dispatch, setSearchedMovies) => {
 	try {
 		dispatch({ type: "gettingMovies" });
 		const res = await API.get("/movies");
 
 		res.data.map((movie) => (movie.inCart = false));
 		dispatch({ type: "getMovies", payload: res.data });
+		setSearchedMovies(res.data)
 	} catch (error) {
 		dispatch({ type: "errorMovies", payload: error.response.data });
 	}

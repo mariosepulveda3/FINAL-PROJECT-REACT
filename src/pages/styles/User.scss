@@ -5,15 +5,15 @@
 
   .container {
     text-align: center;
+    background: rgba(101, 100, 100, 0.567);
+    padding: 30px;
+    border: solid rgba(0, 0, 0, 0.215);
 
     form {
       color: whitesmoke;
-      align-items: center;
       display: flex;
+      align-items: center;
       flex-direction: column;
-      background: rgba(101, 100, 100, 0.567);
-      padding: 30px;
-      border: solid rgba(0, 0, 0, 0.215);
 
       @media screen and (max-width: 500px) {
         margin-inline: 75px;
@@ -60,6 +60,11 @@
       &:hover {
         transform: scale(1.02);
       }
+    }
+
+    .loading{
+      color: whitesmoke;
+      align-self: center;
     }
   }
 }
