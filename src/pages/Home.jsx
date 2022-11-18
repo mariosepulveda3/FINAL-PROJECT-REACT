@@ -12,13 +12,12 @@ const Home = () => {
 
 	useEffect(() => {
 		if (moviesGotten) {
-			const newArr = movies.filter(
+			setSearchedMovies(movies.filter(
 				(movie) =>
 					movie.title.toLowerCase().includes(search) ||
 					movie.director.toLowerCase().includes(search) ||
-					String(movie.year).includes(search)
+					String(movie.year).includes(search))
 			);
-			setSearchedMovies(newArr);
 		}
 	}, [search]);
 
